@@ -49,7 +49,7 @@ if (body) {
           }
         } else if (url.includes("/api/v4/movies/")) {
           if (obj?.data?.show_vip_banner) {
-            //obj.data.show_vip_banner = false;
+            obj.data.show_vip_banner = true;
           }
         }
         body = JSON.stringify(obj);
