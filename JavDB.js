@@ -3,7 +3,7 @@
 
 [rewrite_local]
 ^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(users|startup|ads) url script-response-body https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/JavDB.js
-^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies|startup|logs\/movie_played) url script-request-header https://raw.githubusercontent.com/QuantumultX/main/JavDB.js
+^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies|startup|logs\/movie_played) url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/JavDB.js
 
 [mitm]
 hostname = api.hechuangxinxi.xyz
