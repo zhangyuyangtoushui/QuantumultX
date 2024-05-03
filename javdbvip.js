@@ -3,7 +3,7 @@ JavDB
 
 [rewrite_local]
 ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) url script-response-body https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvip.js
-^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvip.js
+^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvipsj.js
 
 [mitm]
 hostname = api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, api.hechuangxinxi.xyz
@@ -12,15 +12,6 @@ hostname = api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, api.hechuang
 
 if (!$response.body) $done({});
 const url = $request.url;
-let header = $request.headers;
-
-if (url.includes("/api/v1/movies/") && url.includes("/play?")) {
-  header.authorization =
-    "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OTc1NDMwLCJ1c2VybmFtZSI6IndlaWd1YW5naHQifQ.lyfGvtZcz0SjiKNx-k9Aoe_UgcMyxwG4Xqq3lzvbIao";
-  $done({ headers: header });
-} else {
-  $done({});
-}
 let body = $response.body;
 
 if (body) {
