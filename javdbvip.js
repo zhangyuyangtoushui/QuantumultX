@@ -40,12 +40,12 @@ if (body) {
           }
           if (obj?.data?.user) {
             //obj.data.user.vip_expired_at = "2101-06-08T17:35:01.000+08:00";
-            //obj.data.user.is_vip = true;
+            obj.data.user.is_vip = true;
           }
         } else if (url.includes("/api/v1/users")) {
           if (obj?.data?.user) {
             //obj.data.user.vip_expired_at = "2101-06-08T17:35:01.000+08:00";
-            //obj.data.user.is_vip = true;
+            obj.data.user.is_vip = true;
           }
         } else if (url.includes("/api/v4/movies/")) {
           if (obj?.data?.show_vip_banner) {
