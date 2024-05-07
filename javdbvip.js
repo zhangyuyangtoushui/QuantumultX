@@ -3,7 +3,7 @@ JavDB
 
 [rewrite_local]
 ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) url script-response-body https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvip.js
-^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvipsj.js
+^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\? url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/javdbvipsj.js?token=GHSAT0AAAAAACR7QIJO54KUNKGEURU5EPAIZR2NQEQ
 
 [mitm]
 hostname = api.pxxgg.xyz, api.ujvnmkx.cn, api.yijingluowangluo.xyz, api.hechuangxinxi.xyz
