@@ -1,5 +1,5 @@
 /*
-JavDB
+rbavsjk
 
 [rewrite_local]
 ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) url script-response-body https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/rbavsjk.js
