@@ -1,0 +1,10 @@
+#!name = JavDB
+#!desc = 去除全部广告,解锁会员权限。
+#!icon = https://raw.githubusercontent.com/IC58G/vpn_tool/main/Resource/Icon/Loon/green@2x.png
+#!date = 2024-04-27
+
+[Script]
+http-response ^https?:\/\/.*\/api\/v\d\/(movies\/\w+\/play|startup|users|ads) script-path=https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/JavDB.js,requires-body=true,timeout=60,tag=javdb.vip
+
+[MITM]
+hostname = api.pxxgg.xyz,api.ujvnmkx.cn,jdforrepam.com,api.yijingluowangluo.xyz,api.wwwuh5.cn,api.hechuangxinxi.xyz
