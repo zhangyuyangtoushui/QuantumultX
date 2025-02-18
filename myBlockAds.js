@@ -201,14 +201,14 @@ switch (isResp) {
           obj.data.feedback = {};
         }
         if (obj?.data?.user) {
-          // obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
-          // obj.data.user.is_vip = true;
+            obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
+            obj.data.user.is_vip = true;
         }
       } else if (url.includes("/api/v1/users")) {
         // 伪装会员
         if (obj?.data?.user) {
-          // obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
-          // obj.data.user.is_vip = true;
+           obj.data.user.vip_expired_at = "2090-12-31T23:59:59.000+08:00";
+           obj.data.user.is_vip = true;
         }
       } else if (url.includes("/api/v4/movies/")) {
         // 详情页banner
