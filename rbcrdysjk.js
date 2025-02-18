@@ -6,7 +6,7 @@ RBAVSJK
 ^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies|movie_played) url script-request-header https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/rbcrdysjk.js
 
 [mitm]
-hostname = api.hechuangxinxi.xyz
+hostname = api.hechuangxinxi.xyz, api.pxxgg.xyz,api.ujvnmkx.cn,jdforrepam.com,api.yijingluowangluo.xyz,api.wwwuh5.cn, api.liquidlink.cn
 
 *************************************/
 
