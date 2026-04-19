@@ -1,5 +1,5 @@
 #!name=NewAPI 通用签到
-#!desc=支持多站点自动签到。在插件设置中可手动修改 Cron 时间和开关抓包重写。目前已锁定 api.52it.de 进行精准抓包。
+#!desc=支持多站点自动签到。在插件设置中可手动修改 Cron 时间和开关抓包重写。
 #!author=zhangyuyangtoushui
 #!icon=https://raw.githubusercontent.com/luestr/IconCenter/master/bott_Icon/NewAPI.png
 #!date=2026-04-17
