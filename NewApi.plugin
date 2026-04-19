@@ -1,20 +1,21 @@
-#!name=NewAPI 通用签到
-#!desc=支持多站点自动签到。在插件设置中可手动修改 Cron 时间和开关抓包重写。
-#!author=zhangyuyangtoushui
-#!icon=https://raw.githubusercontent.com/luestr/IconCenter/master/bott_Icon/NewAPI.png
-#!date=2026-04-17
+#!name = NewAPI 通用签到
+#!desc = 适配所有NewAPI源码搭建的中转站。请先在插件设置中开启「获取Token开关」，登录或刷新网站主页触发保存，获取成功后建议关闭该开关。后续由定时任务自动签到。多站点可共用。
+#!date = 2026-04-19
+#!author = zhangyuyangtoushui
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png
+#!loon_version = 3.2.4(787)
 
 [Argument]
-# 在 Loon 插件界面可直接修改
-custom_cron = input, "10 9 * * *", tag=自定义签到时间
-capture_cookie = switch, true, tag=抓包开关(获取Cookie)
+TokenSwitch = switch,false,tag=获取Token开关
+CronExp = input,"10 9 * * *",tag=定时签到Cron
 
 [Script]
-# 定时任务：使用 UI 设定的 cron 时间
-cron {custom_cron} script-path=https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/NewApi.js, tag=NewAPI定时签到, timeout=60
+# 定时签到任务
+cron {CronExp} script-path=https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/refs/heads/main/NewApi.js, timeout=120, tag=NewAPI通用签到
 
-# 获取 Cookie：仅在开关开启时生效
-http-request ^https:\/\/.*\/api\/user\/self script-path=https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/main/NewApi.js, tag=获取NewAPI凭据, requires-body=false, argument=capture_cookie={capture_cookie}
+# 获取 Token 的请求重写 (由 TokenSwitch 控制开关)
+http-request ^https?:\/\/.*\/api\/user\/self$ script-path=https://raw.githubusercontent.com/zhangyuyangtoushui/QuantumultX/refs/heads/main/NewApi.js, requires-body=false, timeout=120, enable={TokenSwitch}, tag=获取NewAPI Token
 
-[Mitm]
-hostname = *
+[MITM]
+# 默认抓取所有域名以实现通用匹配。为提升性能，建议将 * 替换为您实际使用的中转站域名，多个域名用英文逗号隔开。
+hostname = api.52it.de, ai.66o.uk
